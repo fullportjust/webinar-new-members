@@ -1,0 +1,13 @@
+{
+  "name": "Full Port University — New Member Onboarding",
+  "short_name": "Full Port U",
+  "description": "Get into the server, set up to trade, and learn to copy our trades — step by step.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#020617",
+  "theme_color": "#020617",
+  "icons": [
+    { "src": "favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "apple-touch-icon.png", "type": "image/png", "sizes": "180x180" }
+  ]
+}

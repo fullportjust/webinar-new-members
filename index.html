@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Port University — Learn Options From Scratch</title>
+<meta name="description" content="The free Full Port University education track. Learn to read charts, understand options, manage a trade, and protect your risk — step by step, with video. No experience needed.">
+<meta name="theme-color" content="#020617">
+<meta name="color-scheme" content="dark light">
+<meta name="robots" content="index, follow">
+<!-- TODO: set both URLs below to the real deployed address once live -->
+<link rel="canonical" href="https://fullportuniversity.com/education.html">
+
+<!-- Favicon / icons -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+
+<!-- Open Graph (social previews) -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Full Port University">
+<meta property="og:title" content="Full Port University — Learn Options From Scratch">
+<meta property="og:description" content="The free FPU education track — read charts, understand options, manage a trade, and protect your risk, step by step.">
+<meta property="og:url" content="https://fullportuniversity.com/education.html">
+<meta property="og:image" content="og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter / X -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Full Port University — Learn Options From Scratch">
+<meta name="twitter:description" content="The free FPU education track — charts, options, and risk management, step by step.">
+<meta name="twitter:image" content="og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#020617; --surface:#0B1220; --surface-2:#0F1B30; --line:#1E293B;
+    --text:#E5EAF2; --muted:#94A3B8; --accent:#34D399; --accent-dim:#10B981;
+    --x:#F87171; --gold:#FBBF24; --maxw:880px;
+  }
+  [data-theme="light"]{
+    --bg:#F6F8FB; --surface:#FFFFFF; --surface-2:#F1F5F9; --line:#E2E8F0;
+    --text:#0F172A; --muted:#64748B; --accent:#059669; --accent-dim:#047857;
+    --x:#DC2626; --gold:#B45309;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--text);font-family:'Inter',system-ui,sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased;transition:background .3s,color .3s}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  .mono{font-family:'JetBrains Mono',monospace}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent)}
+  h1,h2,h3{font-weight:700;letter-spacing:-.02em;line-height:1.12}
+
+  .top{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .top .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-weight:800;letter-spacing:-.02em;font-size:1.02rem}
+  .brand b{color:var(--accent)}
+  .toggle{background:var(--surface);border:1px solid var(--line);color:var(--text);width:38px;height:38px;border-radius:9px;cursor:pointer;font-size:1rem;display:grid;place-items:center;transition:border-color .2s}
+  .toggle:hover{border-color:var(--accent)}
+
+  .hero{padding:84px 0 56px}
+  .hero .tag{margin-top:18px;color:var(--muted);font-size:1.05rem;border-left:2px solid var(--accent);padding-left:14px}
+  .hero h1{font-size:clamp(2.6rem,7vw,4.4rem);margin-top:12px}
+  .hero .lead{margin-top:26px;max-width:60ch;color:var(--muted);font-size:1.08rem}
+  /* "watch next" — secondary video link */
+  .more-vid{display:inline-flex;align-items:center;gap:10px;margin-top:18px;padding:11px 18px;border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 10px 10px 0;color:var(--muted);font-size:.92rem;transition:border-color .2s,color .2s}
+  .more-vid:hover{border-color:var(--accent);color:var(--text)}
+  .more-vid .k{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .more-vid .a{transition:transform .15s}
+  .more-vid:hover .a{transform:translateX(3px)}
+  /* big intro CTA — free masterclass replay (+ 1-on-1 mentorship) */
+  .class-cta{margin-top:36px;padding:28px 30px;border:1px solid var(--accent-dim);border-radius:18px;background:linear-gradient(180deg,color-mix(in srgb,var(--accent) 13%,var(--surface)),var(--surface))}
+  .class-cta .badge{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-dim);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+  .class-cta b{display:block;font-size:clamp(1.4rem,3.4vw,1.95rem);font-weight:700;letter-spacing:-.02em;line-height:1.15;color:var(--text)}
+  .class-cta p{color:var(--muted);font-size:1rem;margin-top:10px;max-width:54ch}
+  .cta-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-top:22px}
+  .class-cta .go{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.92rem;padding:15px 28px;border-radius:11px;background:var(--accent);color:#04130C;transition:transform .15s,filter .15s}
+  [data-theme="light"] .class-cta .go{color:#fff}
+  .class-cta .go:hover{transform:translateY(-2px);filter:brightness(1.07)}
+  .class-cta .go-alt{display:inline-flex;align-items:center;gap:9px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.86rem;padding:14px 22px;border-radius:11px;border:1px solid var(--gold);color:var(--gold);transition:transform .15s,background .15s}
+  .class-cta .go-alt:hover{transform:translateY(-2px);background:color-mix(in srgb,var(--gold) 12%,transparent)}
+  .class-cta .a{transition:transform .15s}
+  .class-cta .go:hover .a,.class-cta .go-alt:hover .a{transform:translateX(4px)}
+
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  .phase-id{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.18em;color:var(--accent);text-transform:uppercase}
+  section h2{font-size:clamp(1.7rem,4.2vw,2.4rem);margin:10px 0 14px}
+  .intro{color:var(--muted);max-width:62ch;margin-bottom:26px}
+
+  /* video frame — paste your embed where marked */
+  .video{position:relative;aspect-ratio:16/9;background:
+      radial-gradient(120% 120% at 50% 0%, var(--surface-2), var(--surface));
+      border:1px solid var(--line);border-radius:16px;overflow:hidden;display:grid;place-items:center;margin:6px 0 26px}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .video .ph{text-align:center;padding:20px}
+  .video .play{width:66px;height:66px;border-radius:50%;border:1px solid var(--accent-dim);background:color-mix(in srgb,var(--accent) 12%,transparent);display:grid;place-items:center;margin:0 auto 14px;transition:transform .2s}
+  .video:hover .play{transform:scale(1.06)}
+  .video .play::before{content:"";border-style:solid;border-width:11px 0 11px 18px;border-color:transparent transparent transparent var(--accent);margin-left:4px}
+  .video .ph .cap{font-family:'JetBrains Mono',monospace;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+  .detail{color:var(--muted);max-width:64ch}
+  .detail + .detail{margin-top:12px}
+  .detail b{color:var(--text);font-weight:600}
+
+  /* steps inside a video section */
+  ol.steps{list-style:none;counter-reset:s;margin-top:6px}
+  ol.steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+  ol.steps li:first-child{border-top:none}
+  ol.steps li::before{content:counter(s);font-family:'JetBrains Mono',monospace;color:var(--accent);font-weight:700}
+  ol.steps b{font-weight:600}
+  ol.steps p{color:var(--muted);font-size:.93rem;margin-top:2px}
+
+  /* signal tags */
+  .tagrow{display:grid;gap:10px;margin-top:4px}
+  .sig{display:grid;grid-template-columns:108px 1fr;gap:18px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+  .sig .t{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent)}
+  .sig.close .t{color:var(--x)}
+  .sig p{color:var(--muted);font-size:.93rem}
+  .rule{margin-top:16px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 20px;color:var(--muted);font-size:.93rem}
+  .rule b{color:var(--text)}
+  /* sub-step label inside a combined phase */
+  .substep{font-family:'JetBrains Mono',monospace;font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);display:block}
+  .substep.divide{margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+
+  /* risk — highlighted block */
+  .risk-wrap{border:1px solid var(--accent-dim);border-radius:18px;padding:30px;background:linear-gradient(180deg, color-mix(in srgb,var(--accent) 7%,var(--surface)), var(--surface))}
+  .risk-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+  .risk-card{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .risk-card h3{font-size:1.02rem;margin-bottom:10px}
+  .risk-card ul{list-style:none}
+  .risk-card li{font-size:.9rem;color:var(--muted);padding:5px 0 5px 18px;position:relative}
+  .risk-card li::before{content:"•";color:var(--accent);position:absolute;left:2px}
+  .risk-card li b{color:var(--text)}
+
+  /* accordion */
+  details{background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+  details[open]{border-color:var(--accent-dim)}
+  summary{list-style:none;cursor:pointer;padding:20px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;font-weight:600}
+  summary::-webkit-details-marker{display:none}
+  summary .meta{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--muted);text-transform:uppercase}
+  summary .pm{width:24px;height:24px;flex:none;border:1px solid var(--line);border-radius:6px;display:grid;place-items:center;color:var(--accent);font-family:'JetBrains Mono',monospace;transition:transform .2s}
+  details[open] summary .pm{transform:rotate(45deg)}
+  .body{padding:0 22px 22px}
+  .body ul{list-style:none;margin-top:4px}
+  .body ul li{padding:9px 0 9px 20px;position:relative;color:var(--muted);font-size:.94rem;border-top:1px dashed var(--line)}
+  .body ul li:first-child{border-top:none}
+  .body ul li::before{content:"\2192";position:absolute;left:0;color:var(--accent)}
+  .body ul li b{color:var(--text);font-weight:600}
+  .lesson{padding:18px 0;border-top:1px dashed var(--line)}
+  .lesson:first-child{border-top:none}
+  .lesson .lt{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;color:var(--accent);text-transform:uppercase}
+  .lesson h4{font-size:1.02rem;font-weight:600;margin:4px 0 4px}
+  .lesson p{color:var(--muted);font-size:.92rem}
+  .lesson .video{margin:12px 0 2px}
+  .lesson .video .cap{font-size:.68rem}
+  .lesson .goal{background:var(--surface-2);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 10px 10px 0;padding:12px 16px;margin-top:10px}
+  .lesson .goal .glabel{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .lesson .goal p{font-size:.9rem;color:var(--muted);margin-top:5px}
+  /* text explainer block — for lessons with no video */
+  .explain{display:grid;gap:12px;margin:14px 0 2px}
+  .ex-card{background:var(--surface-2);border:1px solid var(--line);border-left:2px solid var(--accent);border-radius:0 12px 12px 0;padding:16px 20px}
+  .ex-card .ex-k{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:8px}
+  .ex-card p{color:var(--muted);font-size:.95rem}
+  .ex-card p b{color:var(--text);font-weight:600}
+  /* indicator setup section */
+  .ind-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0 4px}
+  .ind{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+  .ind .nm{font-weight:700;font-size:1rem;margin-bottom:6px}
+  .ind p{color:var(--muted);font-size:.9rem}
+  .ind .tvbtn{display:inline-flex;align-items:center;gap:6px;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+  .ind .tvbtn:hover{filter:brightness(1.2)}
+  .pbtn{display:flex;align-items:center;justify-content:center;gap:10px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.9rem;padding:18px 20px;border-radius:12px;border:1px solid var(--line);transition:transform .15s,border-color .15s,background .15s}
+  .pbtn.primary{background:var(--accent);color:#04130C;border-color:transparent}
+  [data-theme="light"] .pbtn.primary{color:#fff}
+  .pbtn.primary:hover{transform:translateY(-2px);filter:brightness(1.07)}
+  .pbtn.alt:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+  .pbtn.auto{display:inline-flex;width:auto}
+  @media (max-width:680px){.ind-grid{grid-template-columns:1fr}}
+  .covers{padding-bottom:18px;margin-bottom:10px;border-bottom:1px solid var(--line)}
+  .covers .clabel{font-family:'JetBrains Mono',monospace;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+  .covers ul{list-style:none;margin-top:10px}
+  .covers li{padding:6px 0 6px 20px;position:relative;color:var(--muted);font-size:.93rem}
+  .covers li::before{content:"\2192";position:absolute;left:0;color:var(--accent)}
+
+  .milestone{background:linear-gradient(180deg,var(--surface),var(--surface-2));border:1px solid var(--accent-dim);border-radius:16px;padding:30px;text-align:center}
+  .milestone .k{font-size:1.6rem}
+  .milestone h3{font-size:1.3rem;margin:8px 0 6px}
+  .milestone p{color:var(--muted);max-width:48ch;margin:0 auto}
+
+  .nono{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:6px}
+  .nono div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px}
+  .nono .x{color:var(--x);font-family:'JetBrains Mono',monospace;font-size:1.2rem;font-weight:700}
+  .nono b{display:block;margin-top:10px;font-weight:600}
+  .nono p{color:var(--muted);font-size:.86rem;margin-top:4px}
+
+  /* mentorship */
+  .ment{border:1px solid var(--gold);border-radius:18px;padding:32px;background:linear-gradient(180deg, color-mix(in srgb,var(--gold) 8%,var(--surface)), var(--surface));text-align:center}
+  .ment .eyebrow{color:var(--gold)}
+  .ment h2{margin:10px 0 12px}
+  .ment p{color:var(--muted);max-width:52ch;margin:0 auto 24px}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-family:'JetBrains Mono',monospace;font-weight:700;font-size:.9rem;padding:16px 30px;border-radius:11px;transition:transform .15s,filter .15s}
+  .btn.gold{background:var(--gold);color:#1a1206}
+  .btn:hover{transform:translateY(-2px);filter:brightness(1.08)}
+  .btn .a{transition:transform .15s}.btn:hover .a{transform:translateX(3px)}
+
+  /* not-yet-live actions — disabled "coming soon" state (kept visible on purpose) */
+  .pbtn.is-soon,.btn.is-soon{opacity:.55;cursor:not-allowed;filter:grayscale(.4)}
+  .pbtn.is-soon:hover,.btn.is-soon:hover{transform:none;filter:grayscale(.4)}
+  .pbtn.alt.is-soon:hover{border-color:var(--line);color:var(--text)}
+  .soon-pill{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:3px 8px;border-radius:999px;border:1px solid currentColor;opacity:.85;white-space:nowrap}
+
+  .foot-cta{text-align:center;padding:76px 0}
+  .foot-cta h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:12px}
+  .foot-cta p{color:var(--muted);margin-bottom:26px}
+  .foot-cta .cta-actions{justify-content:center}
+  footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.8rem}
+  footer .disc{max-width:74ch;margin-bottom:8px}
+
+  .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+  .reveal.in{opacity:1;transform:none}
+
+  @media (max-width:680px){
+    .risk-grid{grid-template-columns:1fr}
+    .nono{grid-template-columns:1fr}
+    .sig{grid-template-columns:1fr;gap:6px}
+  }
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <div class="brand">Full Port <b>University</b></div>
+    <button class="toggle" id="themeBtn" aria-label="Toggle light and dark mode">☾</button>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Free Education</span>
+    <h1>Learn options from scratch.</h1>
+    <p class="tag">/ The full curriculum, laid out step by step.</p>
+    <p class="lead"><b>Full Port University — FPU for short — teaches options and futures trading from zero.</b> Charts, contracts, and risk management, explained in plain English — no experience needed.</p>
+    <p class="lead">Work top to bottom — each step has a short video. <b>Don't trade until you finish.</b></p>
+    <div class="class-cta reveal">
+      <span class="badge">Free Masterclass · Replay</span>
+      <b>Start here: watch my full system, in-depth.</b>
+      <p>A replay of one of our most recent masterclasses — I walk through my entire trading system from top to bottom, completely free. The best place to begin before you trade. Want hands-on help too? You can book a 1-on-1 call right here.</p>
+      <div class="cta-actions">
+        <a class="go" href="https://join.fullportuniversity.com/freeclass" target="_blank" rel="noopener">Watch the free class <span class="a">&#8594;</span></a>
+        <a class="go-alt" href="https://calendly.com/d/cxmn-djx-py5/fullportuniversity-enrollment-session-enrollment" target="_blank" rel="noopener">Prefer 1-on-1? Book a call <span class="a">&#8594;</span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- PHASE 01 — GET TRADE-READY (setup + managing a trade) -->
+<section id="setup">
+  <div class="wrap">
+    <span class="phase-id">Phase 01 — Get trade-ready</span>
+    <h2 class="reveal">Set up &amp; learn the mechanics.</h2>
+    <p class="intro reveal">Before any strategy, get the basics in place — open your brokerage, get options approval, and learn how a trade actually plays out from entry to exit.</p>
+
+    <span class="substep reveal">Part 1 · Get set up</span>
+    <ol class="steps reveal">
+      <li><div><b>Open a brokerage</b><p>Robinhood, Webull, or Wealthsimple. Pick one. Make an account.</p></div></li>
+      <li><div><b>Get options approval</b><p>You can't trade options until you're approved. Apply now so you're not waiting later.</p></div></li>
+    </ol>
+    <p class="rule reveal"><b>One more step:</b> turn on same-day expirations. Robinhood: Settings → Investing → Options → turn on "Trade on expiration date." Most other brokers already have it on.</p>
+    <p class="rule reveal"><b>Under $25k and want to day-trade?</b> Switch to a <b>cash account</b> to skip the day-trading limit (the "PDT rule"). You trade with settled cash — sell a position to free it up, and it settles back overnight.</p>
+
+    <span class="substep divide reveal">Part 2 · The life of a trade</span>
+    <p class="intro reveal">Every trade moves through the same 4 stages. Learn them and you'll understand how any options trade is managed.</p>
+    <div class="tagrow reveal">
+      <div class="sig"><div class="t">[BUY]</div><p>The entry. A trade plan starts with the stock, strike, expiration date, and the price you get in at.</p></div>
+      <div class="sig"><div class="t">[TRIM]</div><p>Take some profit — usually half — once the trade moves in your favor. Only one contract? This is your Sell.</p></div>
+      <div class="sig"><div class="t">[SELL]</div><p>Take the rest of the profit. The winner's closed — you're out.</p></div>
+      <div class="sig close"><div class="t">[CLOSE]</div><p>Cut a loss. Losses happen — it's normal. Take the small loss before it becomes a big one.</p></div>
+    </div>
+    <p class="rule reveal"><b>Entry rule:</b> get in as close to your planned entry price as you can. If the move has already run <b>10–15% past</b> it, skip the trade and wait for the next setup. Don't chase.</p>
+    <p class="rule reveal"><b>Golden rule:</b> Trim into profit, then move your stop to breakeven — so a winner can't turn into a loss.</p>
+  </div>
+</section>
+
+<!-- PHASE 02 — RISK / PORTFOLIO MANAGEMENT (highlighted) -->
+<section id="risk">
+  <div class="wrap">
+    <span class="phase-id">Phase 02 — Non-negotiable</span>
+    <h2 class="reveal">Risk &amp; portfolio management.</h2>
+    <p class="intro reveal">The most important part. Good entries don't keep you alive — sizing does. Most people don't blow up because they're wrong. They blow up because they're too big when they're wrong.</p>
+
+    <div class="video reveal">
+      <iframe src="https://www.youtube.com/embed/Yjg8w7_3NmI" title="Sizing, risk &amp; protecting your portfolio" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <div class="risk-wrap reveal">
+      <div class="detail"><b>Size every trade as a % of your account — and assume it can go to $0.</b> Options die worthless all the time. If a full loss would hurt, you're too big.</div>
+      <div class="risk-grid">
+        <div class="risk-card">
+          <h3>Position sizing</h3>
+          <ul>
+            <li><b>Full</b> — 3–5% of your account (default)</li>
+            <li><b>Small</b> — 1–3% when you're less sure</li>
+            <li><b>Lotto</b> — under 1%, high risk, can go to $0</li>
+            <li>Small account? Scale up a bit — but don't chase junk contracts</li>
+          </ul>
+        </div>
+        <div class="risk-card">
+          <h3>Risk by time left</h3>
+          <ul>
+            <li><b>1–7 days</b> — most dangerous, loses value fast</li>
+            <li><b>8–14 days</b> — still risky</li>
+            <li><b>15–30 days</b> — more forgiving</li>
+            <li><b>30+ days</b> — lowest risk, more time to be right</li>
+          </ul>
+        </div>
+      </div>
+      <div class="detail" style="margin-top:16px"><b>Protect your wins.</b> <b>[TRIM]</b> about half into profit (around 20–40%), then move your stop to breakeven so a green trade can't go red. Keep a hard stop near -50%, though a well-managed trade usually gets <span class="mono">[SELL]</span>-ed well before that. Survive first — the gains add up when you're still here next month.</div>
+    </div>
+
+    <a class="more-vid reveal" href="https://www.youtube.com/watch?v=fQj-MKsLntU" target="_blank" rel="noopener"><span class="k">Watch next</span> Bonus video — more on risk management <span class="a">&#8594;</span></a>
+  </div>
+</section>
+
+<!-- THE COURSE -->
+<section id="course">
+  <div class="wrap">
+    <span class="phase-id">The free course — Options from zero</span>
+    <h2 class="reveal">Learn options from scratch.</h2>
+    <p class="intro reveal">Total beginner? Start here. 2 stages: read charts, then learn how options work. Short videos plus a quick read. Take them in order. Tap a stage to open it.</p>
+
+    <details class="reveal" open>
+      <summary><span>Stage A — Set up &amp; read the charts</span><span style="display:flex;align-items:center;gap:14px"><span class="meta">4 lessons</span><span class="pm">+</span></span></summary>
+      <div class="body">
+        <div class="covers">
+          <span class="clabel">What this section covers</span>
+          <ul>
+            <li>Setting up TradingView and laying out a clean chart the way we trade</li>
+            <li>Reading candlesticks — what each candle tells you about buyers and sellers</li>
+            <li>Support, resistance, and trend — plus the breakout pattern we trade most</li>
+          </ul>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 01</div><h4>Set up your charts</h4>
+          <p>Get TradingView, learn the basics, and pick your timeframes.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/ElBq_eGdQRM" title="Set up your charts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Open TradingView and set up a clean chart — the same view we use before every trade.</p></div>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 02</div><h4>Understanding candlesticks</h4>
+          <p>What a candle's body, wicks, and color tell you about buyers and sellers.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/ihfaYbo-kA8" title="Understanding candlesticks" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Read any single candle and see what buyers and sellers did.</p></div>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 03</div><h4>Support, Resistance &amp; Trend</h4>
+          <p>Mark the levels price reacts to, and spot if a stock is going up, down, or sideways.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/skd1oUs2yoE" title="Support, Resistance &amp; Trend" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Mark support and resistance and name the trend.</p></div>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 04</div><h4>Textbook #1 Chart Pattern</h4>
+          <p>Our go-to setup: price breaks past a key level, pulls back to re-test it, then keeps going the same way. Break → re-test → continuation.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/QS105demFvA" title="Textbook #1 Chart Pattern" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Spot a breakout, wait for the re-test, and trade the continuation.</p></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="reveal">
+      <summary><span>Stage B — How options actually work</span><span style="display:flex;align-items:center;gap:14px"><span class="meta">1 video + quick read</span><span class="pm">+</span></span></summary>
+      <div class="body">
+        <div class="covers">
+          <span class="clabel">What this section covers</span>
+          <ul>
+            <li>What an option actually is and how it differs from owning shares</li>
+            <li>Calls vs puts, and reading a full contract — strike, expiration, and price</li>
+            <li>Why one contract controls 100 shares, and what makes an option's price move</li>
+          </ul>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 05</div><h4>Options vs Stocks + Calls &amp; Puts</h4>
+          <p>What an option is, why you trade the contract instead of 100 shares, and the difference between Calls and Puts.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/zX5mAnF3vJ8" title="Options vs Stocks + Calls &amp; Puts" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Explain options vs stocks, and know when a trade needs a Call or a Put.</p></div>
+        </div>
+        <div class="lesson">
+          <div class="lt">Quick read · No video</div><h4>The rest of the basics</h4>
+          <p>Short and simple. Read these once and the foundation's yours.</p>
+          <div class="explain">
+            <div class="ex-card">
+              <span class="ex-k">Calls &amp; Puts</span>
+              <p>A <b>Call</b> makes money when the stock goes up. A <b>Put</b> makes money when it goes down. Every options trade is one or the other.</p>
+            </div>
+            <div class="ex-card">
+              <span class="ex-k">Reading a Contract</span>
+              <p>Take <span class="mono">TSLA 3/8 $180 Call @ 2.00</span> — stock <b>TSLA</b>, expires <b>3/8</b>, strike <b>$180</b>, type <b>Call</b>, price <b>2.00</b>. One contract = 100 shares, so <span class="mono">2.00</span> = <span class="mono">$200</span>.</p>
+            </div>
+            <div class="ex-card">
+              <span class="ex-k">What Moves the Price</span>
+              <p>Three things: <b>direction</b> (does the stock go your way), <b>time</b> (options lose value as expiration gets closer), and <b>the strike</b> (how far it sits from the stock price).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </details>
+
+    <!-- TEMP HIDDEN — remove the hidden attribute below to restore Stage C -->
+    <details class="reveal" hidden>
+      <summary><span>Stage C — The core indicators</span><span style="display:flex;align-items:center;gap:14px"><span class="meta">3 lessons</span><span class="pm">+</span></span></summary>
+      <div class="body">
+        <div class="covers">
+          <span class="clabel">What this section covers</span>
+          <ul>
+            <li>The three core indicators — RSI, Bollinger Bands, and MACD — one lesson each</li>
+            <li>What each indicator signals and how to read it without overcomplicating things</li>
+            <li>Our full FPU indicator setup gets its own section right after the course</li>
+          </ul>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 09</div><h4>RSI &amp; Overbought / Oversold</h4>
+          <p>How do you know when a stock is "too high" or "too low"? RSI flags when it's overbought or oversold, so you can time better entries and exits.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/DlqOuyx6tPQ" title="RSI &amp; Overbought / Oversold" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Use RSI to avoid chasing and time your entries better.</p></div>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 10</div><h4>Bollinger Bands</h4>
+          <p>See a stock's normal price range at a glance — and spot the outliers when price stretches too far outside it.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/sHYNAHnhEXY" title="Bollinger Bands" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Read Bollinger Bands to spot when price is stretched or coiling.</p></div>
+        </div>
+        <div class="lesson">
+          <div class="lt">Lesson 11</div><h4>MACD</h4>
+          <p>MACD is all about momentum. The trend is your friend — follow it with MACD and trade your direction with more conviction.</p>
+          <div class="video"><iframe src="https://www.youtube.com/embed/WNFiHfuPMgU" title="MACD" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe></div>
+          <div class="goal"><span class="glabel">You'll be able to</span><p>Read MACD to confirm momentum and trend.</p></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- MENTORSHIP -->
+<section id="mentorship">
+  <div class="wrap">
+    <div class="ment reveal">
+      <span class="eyebrow">Optional — Go further</span>
+      <h2>Want 1-on-1 mentorship?</h2>
+      <p>What you just went through covers the <b>basics of options trading</b> — enough to understand the market, read a chart, and manage a trade with real risk rules.</p>
+      <p>If you want more — the <b>full course</b> plus <b>1-on-1 help</b> with your trades reviewed and a plan built with you — that's when to book a call. We'll see if it's a fit.</p>
+      <a class="btn gold" href="https://calendly.com/d/cxmn-djx-py5/fullportuniversity-enrollment-session-enrollment" target="_blank" rel="noopener">Book a call <span class="a">&#8594;</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- LOAD OUR INDICATORS — TEMP HIDDEN; remove the hidden attribute below to restore -->
+<section id="indicators" hidden>
+  <div class="wrap">
+    <span class="phase-id">Final setup — Match our charts</span>
+    <h2 class="reveal">Load our indicators.</h2>
+    <p class="intro reveal">Last step before you trade: make your TradingView look like ours. We each trade with our own toolkit — load whichever trader you want to follow, or both. To add one: open its link, tap <b>Add to favorites</b>, then turn it on from the indicators menu at the top of your chart.</p>
+
+    <span class="substep reveal">FPU.J's setup · Smart money</span>
+    <p class="detail reveal">Justin trades three smart-money tools that show where the big money is active.</p>
+    <div class="ind-grid reveal">
+      <div class="ind">
+        <div class="nm">Liquidity Levels</div>
+        <p>Shows the price levels where traders' stop-losses sit. Big money targets these spots to fuel the next move.</p>
+        <a class="tvbtn" href="https://www.tradingview.com/script/5QE1nSme-Liquidity-Levels-TradeTips/" target="_blank" rel="noopener">Add on TradingView →</a>
+      </div>
+      <div class="ind">
+        <div class="nm">Orderblocks</div>
+        <p>Marks the zones where large firms placed big orders. Price often returns to these zones before moving again.</p>
+        <a class="tvbtn" href="https://www.tradingview.com/script/8ULzuQSa-Orderblocks-TradeTips/" target="_blank" rel="noopener">Add on TradingView →</a>
+      </div>
+      <div class="ind">
+        <div class="nm">Fair Value Gaps</div>
+        <p>Spots the gap left by a fast move — a big candle between two small ones. Price tends to come back and fill it.</p>
+        <a class="tvbtn" href="https://www.tradingview.com/script/yEmXtlUy-Fair-Value-Gaps-TradeTips/" target="_blank" rel="noopener">Add on TradingView →</a>
+      </div>
+    </div>
+    <p class="detail reveal" style="margin-top:14px"><b>New to these?</b> The free indicator ebook explains all three in plain English.</p>
+    <!-- When live: change <span> to <a href="EBOOK_URL" target="_blank" rel="noopener"> and remove is-soon + .soon-pill -->
+    <span class="pbtn alt is-soon auto reveal" role="link" aria-disabled="true" style="margin-top:10px">Indicator ebook (PDF) <span class="soon-pill">Coming soon</span></span>
+
+    <span class="substep divide reveal">FPU.Kenny's setup · Everyday</span>
+    <p class="detail reveal">Kenny runs a different mix. Search each name in TradingView's indicator search and add it.</p>
+    <div class="ind-grid reveal">
+      <div class="ind"><div class="nm">Smart Money Concepts</div><p>by LuxAlgo — maps market structure, order blocks, and liquidity in one tool.</p></div>
+      <div class="ind"><div class="nm">Nadaraya-Watson</div><p>by LuxAlgo — a smooth band around price that flags dynamic support and resistance.</p></div>
+      <div class="ind"><div class="nm">Visible Range Volume Profile</div><p>Shows the prices where the most shares traded — where price is "heavy."</p></div>
+      <div class="ind"><div class="nm">Stochastic RSI</div><p>A faster overbought / oversold read for timing.</p></div>
+    </div>
+    <p class="detail reveal" style="margin-top:14px"><b>Futures only:</b> Kenny adds <b>SuperTrend AI</b> by LuxAlgo for trend direction.</p>
+
+    <span class="substep divide reveal">The watchlist</span>
+    <p class="detail reveal">Load the same names we watch every day so you're looking at the same charts we are.</p>
+    <a class="pbtn primary auto reveal" href="https://www.tradingview.com/watchlists/23775483/" target="_blank" rel="noopener" style="margin-top:10px">Open the FPU watchlist →</a>
+  </div>
+</section>
+
+<!-- BONUS — FUTURES — TEMP HIDDEN; remove the hidden attribute below to restore -->
+<section id="bonus" hidden>
+  <div class="wrap">
+    <span class="phase-id" style="color:var(--x)">Optional — Bonus material</span>
+    <h2 class="reveal">Futures trading.</h2>
+    <p class="intro reveal">Extra, not required. Do this on your own time once you're comfortable with options. Futures use a different broker and mindset, so we keep it separate.</p>
+
+    <div class="video reveal">
+      <iframe src="https://www.youtube.com/embed/raP77d4HIh8" title="Intro to futures (bonus)" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- NON-NEGOTIABLES -->
+<section id="rules">
+  <div class="wrap">
+    <span class="phase-id" style="color:var(--x)">Before you trade</span>
+    <h2 class="reveal">The non-negotiables.</h2>
+    <p class="intro reveal">Break these and the system stops working. They're not optional.</p>
+    <div class="nono reveal">
+      <div><span class="x">✗</span><b>No risk plan, no trade.</b><p>Know your entry, your Trim, and your stop before you click Buy.</p></div>
+      <div><span class="x">✗</span><b>Never bet what you can't lose.</b><p>Options can go to $0. Size every trade so a full loss won't hurt.</p></div>
+      <div><span class="x">✗</span><b>Don't chase.</b><p>Missed the entry? Skip it. There's always another setup — a forced trade is a bad trade.</p></div>
+    </div>
+
+    <div class="milestone reveal" style="margin-top:28px">
+      <div class="k">🔑</div>
+      <h3>You're ready for your first trade.</h3>
+      <p>You're set up and trained. Start small, respect your risk, and keep studying — the market pays the patient.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER CTA -->
+<section class="foot-cta" id="next">
+  <div class="wrap reveal">
+    <span class="eyebrow">Keep going</span>
+    <h2>Go deeper, for free.</h2>
+    <p>The masterclass replay walks the whole system top to bottom — the perfect next step.</p>
+    <div class="cta-actions">
+      <a class="pbtn primary auto" href="https://join.fullportuniversity.com/freeclass" target="_blank" rel="noopener">Watch the free class →</a>
+      <a class="pbtn alt auto" href="https://calendly.com/d/cxmn-djx-py5/fullportuniversity-enrollment-session-enrollment" target="_blank" rel="noopener">Book a 1-on-1 call →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="disc">Full Port University is an educational community. Nothing here is financial advice. Trading options and futures carries a real risk of loss, and you are responsible for your own decisions and outcomes.</p>
+    <p class="mono">© Full Port University · growth@fullportuniversity.com</p>
+  </div>
+</footer>
+
+<script>
+  const btn=document.getElementById('themeBtn'),html=document.documentElement;
+  btn.addEventListener('click',()=>{const l=html.getAttribute('data-theme')==='light';html.setAttribute('data-theme',l?'dark':'light');btn.textContent=l?'☾':'☀';});
+  const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
