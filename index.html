@@ -114,12 +114,6 @@
   ol.steps b{font-weight:600}
   ol.steps p{color:var(--muted);font-size:.93rem;margin-top:2px}
 
-  /* signal tags */
-  .tagrow{display:grid;gap:10px;margin-top:4px}
-  .sig{display:grid;grid-template-columns:108px 1fr;gap:18px;align-items:baseline;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
-  .sig .t{font-family:'JetBrains Mono',monospace;font-weight:700;color:var(--accent)}
-  .sig.close .t{color:var(--x)}
-  .sig p{color:var(--muted);font-size:.93rem}
   .rule{margin-top:16px;background:var(--surface-2);border:1px solid var(--line);border-radius:12px;padding:16px 20px;color:var(--muted);font-size:.93rem}
   .rule b{color:var(--text)}
   /* sub-step label inside a combined phase */
@@ -233,7 +227,6 @@
   @media (max-width:680px){
     .risk-grid{grid-template-columns:1fr}
     .nono{grid-template-columns:1fr}
-    .sig{grid-template-columns:1fr;gap:6px}
   }
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
 </style>
@@ -266,14 +259,13 @@
   </div>
 </header>
 
-<!-- PHASE 01 — GET TRADE-READY (setup + managing a trade) -->
+<!-- PHASE 01 — GET TRADE-READY (brokerage + options approval) -->
 <section id="setup">
   <div class="wrap">
     <span class="phase-id">Phase 01 — Get trade-ready</span>
-    <h2 class="reveal">Set up &amp; learn the mechanics.</h2>
-    <p class="intro reveal">Before any strategy, get the basics in place — open your brokerage, get options approval, and learn how a trade actually plays out from entry to exit.</p>
+    <h2 class="reveal">Get set up to trade.</h2>
+    <p class="intro reveal">Before any strategy, get the basics in place — open your brokerage and get options approval.</p>
 
-    <span class="substep reveal">Get set up</span>
     <ol class="steps reveal">
       <li><div><b>Open a brokerage</b><p>Robinhood, Webull, or Wealthsimple. Pick one. Make an account.</p></div></li>
       <li><div><b>Get options approval</b><p>You can't trade options until you're approved. Apply now so you're not waiting later.</p></div></li>
@@ -315,7 +307,7 @@
           </ul>
         </div>
       </div>
-      <div class="detail" style="margin-top:16px"><b>Protect your wins.</b> <b>[TRIM]</b> about half into profit (around 20–40%), then move your stop to breakeven so a green trade can't go red. Keep a hard stop near -50%, though a well-managed trade usually gets <span class="mono">[SELL]</span>-ed well before that. Survive first — the gains add up when you're still here next month.</div>
+      <div class="detail" style="margin-top:16px"><b>Protect your wins.</b> Take some profit once a trade moves in your favor — usually about half, around 20–40% up — then move your stop up to what you paid, so the plan on the rest is to walk away flat rather than hand the gain back. Stops aren't guaranteed to fill at your price in a fast market. Keep a hard stop near -50%, though a well-managed trade is usually out well before that. Survive first — the gains add up when you're still here next month.</div>
     </div>
 
     <a class="more-vid reveal" href="https://www.youtube.com/watch?v=fQj-MKsLntU" target="_blank" rel="noopener"><span class="k">Watch next</span> Bonus video — more on risk management <span class="a">&#8594;</span></a>
@@ -519,7 +511,7 @@
     <h2 class="reveal">The non-negotiables.</h2>
     <p class="intro reveal">Break these and the system stops working. They're not optional.</p>
     <div class="nono reveal">
-      <div><span class="x">✗</span><b>No risk plan, no trade.</b><p>Know your entry, your Trim, and your stop before you click Buy.</p></div>
+      <div><span class="x">✗</span><b>No risk plan, no trade.</b><p>Know your entry, your profit target, and your stop before you place the trade.</p></div>
       <div><span class="x">✗</span><b>Never bet what you can't lose.</b><p>Options can go to $0. Size every trade so a full loss won't hurt.</p></div>
       <div><span class="x">✗</span><b>Don't chase.</b><p>Missed the entry? Skip it. There's always another setup — a forced trade is a bad trade.</p></div>
     </div>
