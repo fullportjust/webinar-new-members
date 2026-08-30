@@ -217,6 +217,13 @@
   .foot-cta h2{font-size:clamp(1.8rem,4.5vw,2.6rem);margin-bottom:12px}
   .foot-cta p{color:var(--muted);margin-bottom:26px}
   .foot-cta .cta-actions{justify-content:center}
+
+  /* footer quick links — watchlist + indicators */
+  .foot-tools{margin-top:40px;padding-top:32px;border-top:1px solid var(--line)}
+  .foot-tools .cta-actions{margin-top:14px}
+  .tool-links{display:flex;flex-wrap:wrap;gap:12px 22px;justify-content:center;margin-top:18px}
+  .foot-tools .tvbtn{display:inline-flex;align-items:center;gap:6px;font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--accent)}
+  .foot-tools .tvbtn:hover{filter:brightness(1.2)}
   footer{border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:.8rem}
   footer .disc{max-width:74ch;margin-bottom:8px}
 
@@ -458,8 +465,8 @@
   </div>
 </section>
 
-<!-- LOAD OUR INDICATORS — TEMP HIDDEN; remove the hidden attribute below to restore -->
-<section id="indicators" hidden>
+<!-- LOAD OUR INDICATORS -->
+<section id="indicators">
   <div class="wrap">
     <span class="phase-id">Final setup — Match our charts</span>
     <h2 class="reveal">Load our indicators.</h2>
@@ -546,6 +553,19 @@
     <div class="cta-actions">
       <a class="pbtn primary auto" href="https://join.fullportuniversity.com/freeclass" target="_blank" rel="noopener">Watch the free class →</a>
       <a class="pbtn alt auto" href="https://calendly.com/d/cxmn-djx-py5/fullportuniversity-enrollment-session-enrollment" target="_blank" rel="noopener">Book a 1-on-1 call →</a>
+    </div>
+
+    <!-- QUICK LINKS — watchlist + indicators -->
+    <div class="foot-tools">
+      <span class="eyebrow">Your daily tools</span>
+      <div class="cta-actions">
+        <a class="pbtn alt auto" href="https://www.tradingview.com/watchlists/23775483/" target="_blank" rel="noopener">Open the FPU watchlist →</a>
+      </div>
+      <div class="tool-links">
+        <a class="tvbtn" href="https://www.tradingview.com/script/5QE1nSme-Liquidity-Levels-TradeTips/" target="_blank" rel="noopener">Liquidity Levels →</a>
+        <a class="tvbtn" href="https://www.tradingview.com/script/8ULzuQSa-Orderblocks-TradeTips/" target="_blank" rel="noopener">Orderblocks →</a>
+        <a class="tvbtn" href="https://www.tradingview.com/script/yEmXtlUy-Fair-Value-Gaps-TradeTips/" target="_blank" rel="noopener">Fair Value Gaps →</a>
+      </div>
     </div>
   </div>
 </section>
